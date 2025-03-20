@@ -1,3 +1,8 @@
+<svelte:head>
+  <title>The JOHNDEX | The John Database</title>
+  <meta name="description" content="The greatest database of Johns in history" />
+</svelte:head>
+
 <div class="mx-auto w-fit">
   <h1 class="pt-10 text-center text-7xl">JOHNDEX</h1>
   <hr class="w-full border" />
