@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-primary: 'Jersey 10', 'sans';
+  --color-text: #e7f0f3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Sixtyfour', 'sans';
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    'BLED' 0,
+    'SCAN' -20;
+}
