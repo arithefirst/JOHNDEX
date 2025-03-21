@@ -18,7 +18,7 @@
   </div>
   <div class="mx-auto mt-12 mb-4 grid w-3/4 grid-cols-1 gap-2 md:grid-cols-3">
     {#each data.johns as john}
-      <JohnBox name={john.name} item={john.item} />
+      <JohnBox name={john.name} item={john.item} createdAt={john.createdAt} uploader={john.uploader} />
     {/each}
   </div>
 </main>

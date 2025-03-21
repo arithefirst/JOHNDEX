@@ -15,6 +15,13 @@
       "when": 1742524918172,
       "tag": "0001_light_warstar",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1742529284371,
+      "tag": "0002_useful_cerebro",
+      "breakpoints": true
     }
   ]
 }

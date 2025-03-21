@@ -6,6 +6,7 @@ import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 import { z } from 'zod';
 import { message } from 'sveltekit-superforms';
+import { clerkClient } from 'svelte-clerk/server';
 
 const schema = z.object({
   name: z.string().min(1, 'Must not be empty.'),
@@ -39,6 +40,8 @@ export const actions: Actions = {
       await db.insert(john).values({
         name,
         item,
+        uploader: (await clerkClient.users.getUser(userId)).fullName || 'UNKNOWN USER!',
+        createdAt: new Date(),
       });
     } catch (e) {
       return fail(500, { message: (e as Error).message });

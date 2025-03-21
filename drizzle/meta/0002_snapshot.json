@@ -1,6 +1,6 @@
 {
-  "id": "73bd0273-e08b-45c7-8b2e-617fb3952b15",
-  "prevId": "2df126ab-6193-439d-9a20-9d48b1d60ccc",
+  "id": "69dff889-2b8e-47e8-a33c-ce749fd9ddb8",
+  "prevId": "73bd0273-e08b-45c7-8b2e-617fb3952b15",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -18,7 +18,19 @@
           "name": "item",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
+        },
+        "uploader": {
+          "name": "uploader",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
         }
       },
       "indexes": {},
