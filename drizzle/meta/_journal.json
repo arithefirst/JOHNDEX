@@ -8,6 +8,13 @@
       "when": 1742504958949,
       "tag": "0000_needy_red_skull",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1742524918172,
+      "tag": "0001_light_warstar",
+      "breakpoints": true
     }
   ]
 }

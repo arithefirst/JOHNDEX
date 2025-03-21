@@ -1,0 +1,1 @@
+ALTER TABLE "john" ADD CONSTRAINT "john_item_unique" UNIQUE("item");

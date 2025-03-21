@@ -1,8 +1,11 @@
 <script lang="ts">
   import { dark } from '@clerk/themes';
   import { SignedIn, SignedOut, SignInButton, UserButton } from 'svelte-clerk';
+  import JohnBox from '$lib/components/johnBox.svelte';
   import SubmissionForm from '$lib/components/submissionForm.svelte';
   let { data } = $props();
+
+  console.log(data.johns);
 </script>
 
 <svelte:head>
@@ -12,8 +15,13 @@
 
 <main class="font-primary text-text min-h-screen bg-[#081216]">
   <div class="mx-auto w-fit">
-    <h1 class="pt-10 text-center text-7xl">JOHNDEX</h1>
-    <hr class="w-full border" />
+    <h1 class="the-freaky-ibm-font pt-10 text-center text-7xl">JOHNDEX</h1>
+    <hr class="w-full border-1 border-[#AFB8BB]" />
+  </div>
+  <div class="mx-auto mt-12 grid w-3/4 grid-cols-1 gap-2 md:grid-cols-3">
+    {#each data.johns as john}
+      <JohnBox name={john.name} item={john.item} />
+    {/each}
   </div>
 </main>
 
