@@ -1,8 +1,8 @@
 <script lang="ts">
   import { dark } from '@clerk/themes';
   import { SignedIn, SignedOut, SignInButton, UserButton } from 'svelte-clerk';
-  import * as Dialog from '$lib/components/ui/dialog/index.js';
-  import { enhance } from '$app/forms';
+  import SubmissionForm from '$lib/components/submissionForm.svelte';
+  let { data } = $props();
 </script>
 
 <svelte:head>
@@ -31,30 +31,7 @@
           },
         }}
       />
-
-      <Dialog.Root>
-        <Dialog.Trigger class="text-text font-primary bg-primary h-fit cursor-pointer rounded-md px-2"
-          >Add new John</Dialog.Trigger
-        >
-        <Dialog.Content>
-          <form method="POST" use:enhance>
-            <Dialog.Header>
-              <Dialog.Title>Add new John</Dialog.Title>
-            </Dialog.Header>
-            <p>
-              John
-              <input class="border-text w-16 border-b outline-0" name="name" id="name" />
-              , inventor of
-              <input class="border-text w-16 border-b outline-0" name="item" id="item" />
-            </p>
-            <Dialog.Footer>
-              <button type="submit" class="text-text font-primary bg-primary cursor-pointer rounded-md px-2 py-1">
-                Submit
-              </button>
-            </Dialog.Footer>
-          </form>
-        </Dialog.Content>
-      </Dialog.Root>
+      <SubmissionForm {data} />
     </div>
   </SignedIn>
   <SignedOut>

@@ -2,6 +2,20 @@ import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
 import { db } from '$lib/server/db';
 import { john } from '$lib/server/db/schema';
+import { superValidate } from 'sveltekit-superforms';
+import { zod } from 'sveltekit-superforms/adapters';
+import { z } from 'zod';
+import { message } from 'sveltekit-superforms';
+
+const schema = z.object({
+  name: z.string().min(1, 'Must not be empty.'),
+  item: z.string().min(1, 'Must not be empty.'),
+});
+
+export const load = async () => {
+  const form = await superValidate(zod(schema));
+  return { form };
+};
 
 export const actions: Actions = {
   default: async ({ request, locals }) => {
@@ -11,13 +25,14 @@ export const actions: Actions = {
       return fail(401);
     }
 
-    const data = await request.formData();
-    const name = data.get('name') as string;
-    const item = data.get('item') as string;
+    const form = await superValidate(request, zod(schema));
 
-    if (!name || !item) {
-      return fail(400, { message: 'Bad data.' });
+    if (!form.valid) {
+      return fail(400, { form });
     }
+
+    const name = form.data.name;
+    const item = form.data.item;
 
     try {
       await db.insert(john).values({
@@ -28,6 +43,6 @@ export const actions: Actions = {
       return fail(500, { message: (e as Error).message });
     }
 
-    return {};
+    return message(form, 'Success!');
   },
 };
