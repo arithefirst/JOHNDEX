@@ -3,6 +3,7 @@
   import { SignedIn, SignedOut, SignInButton, UserButton } from 'svelte-clerk';
   import JohnBox from '$lib/components/johnBox.svelte';
   import SubmissionForm from '$lib/components/submissionForm.svelte';
+  import { UserIcon } from 'lucide-svelte';
   let { data } = $props();
 
   let windowWidth: number = $state(0);
@@ -45,17 +46,23 @@
 <div class="absolute top-4 left-4 flex">
   <SignedIn>
     <div class="flex items-center gap-2">
-      <UserButton
-        appearance={{
-          baseTheme: dark,
-          elements: {
-            userButtonAvatarBox: {
-              width: '2rem',
-              height: '2rem',
+      <div class="bg-primary relative size-8 overflow-hidden rounded-full">
+        <UserIcon
+          color="var(--color-text)"
+          class="absolute top-1/2 left-1/2 size-8.5 -translate-x-1/2 -translate-y-1/2 "
+        />
+        <UserButton
+          appearance={{
+            baseTheme: dark,
+            elements: {
+              userButtonAvatarBox: {
+                width: '100%',
+                height: '100%',
+              },
             },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
       <SubmissionForm {data} />
     </div>
   </SignedIn>
