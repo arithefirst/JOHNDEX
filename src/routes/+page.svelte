@@ -48,8 +48,8 @@
           baseTheme: dark,
           elements: {
             userButtonAvatarBox: {
-              width: '3rem',
-              height: '3rem',
+              width: '2rem',
+              height: '2rem',
             },
           },
         }}
