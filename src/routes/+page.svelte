@@ -4,7 +4,18 @@
   import JohnBox from '$lib/components/johnBox.svelte';
   import SubmissionForm from '$lib/components/submissionForm.svelte';
   let { data } = $props();
+
+  let windowWidth: number = $state(0);
+
+  function generateAnimGroup(i: number) {
+    if (windowWidth < 768) {
+      return i + 1;
+    }
+    return Math.ceil((i + 1) / 3);
+  }
 </script>
+
+<svelte:window bind:innerWidth={windowWidth} />
 
 <svelte:head>
   <title>The JOHNDEX | The John Database</title>
@@ -17,8 +28,14 @@
     <hr class="w-full border-1 border-[#AFB8BB]" />
   </div>
   <div class="mx-auto mt-12 mb-4 grid w-3/4 grid-cols-1 gap-2 md:grid-cols-3">
-    {#each data.johns as john}
-      <JohnBox name={john.name} item={john.item} createdAt={john.createdAt} uploader={john.uploader} />
+    {#each data.johns as john, i}
+      <JohnBox
+        i={generateAnimGroup(i)}
+        name={john.name}
+        item={john.item}
+        createdAt={john.createdAt}
+        uploader={john.uploader}
+      />
     {/each}
   </div>
 </main>
