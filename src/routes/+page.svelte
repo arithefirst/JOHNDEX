@@ -4,8 +4,6 @@
   import JohnBox from '$lib/components/johnBox.svelte';
   import SubmissionForm from '$lib/components/submissionForm.svelte';
   let { data } = $props();
-
-  console.log(data.johns);
 </script>
 
 <svelte:head>
