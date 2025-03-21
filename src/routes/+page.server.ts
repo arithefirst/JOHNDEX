@@ -15,7 +15,7 @@ const schema = z.object({
 
 export const load = async () => {
   const form = await superValidate(zod(schema));
-  const johns = await db.select().from(john);
+  const johns = await db.select().from(john).orderBy(john.createdAt);
   return { form, johns };
 };
 
