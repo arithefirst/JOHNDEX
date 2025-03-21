@@ -49,6 +49,7 @@
   "dependencies": {
     "@clerk/themes": "^2.2.22",
     "@neondatabase/serverless": "^0.10.4",
+    "@vercel/analytics": "^1.5.0",
     "drizzle-orm": "^0.40.0",
     "lucide-svelte": "^0.483.0",
     "svelte-clerk": "^0.10.3"
