@@ -8,9 +8,9 @@
 </script>
 
 <div
-  class="inset-shadow-johnbox flex h-[100px] w-full flex-col items-center justify-center rounded-xl bg-[#142E38]"
+  class="inset-shadow-johnbox flex h-fit min-h-[100px] w-full flex-col items-center justify-center rounded-xl bg-[#142E38]"
 >
-  <h2 class="text-4xl">John {name}</h2>
+  <h2 class="text-center text-4xl">John {name}</h2>
   <hr class="text-text border-text w-2/3 border" />
-  <p class="text-2xl">Creator of {item}</p>
+  <p class="text-center text-2xl">Creator of {item}</p>
 </div>

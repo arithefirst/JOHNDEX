@@ -13,10 +13,10 @@
 
 <main class="font-primary text-text min-h-screen bg-[#081216]">
   <div class="mx-auto w-fit">
-    <h1 class="the-freaky-ibm-font pt-10 text-center text-7xl">JOHNDEX</h1>
+    <h1 class="the-freaky-ibm-font pt-20 text-center text-4xl md:text-7xl">JOHNDEX</h1>
     <hr class="w-full border-1 border-[#AFB8BB]" />
   </div>
-  <div class="mx-auto mt-12 grid w-3/4 grid-cols-1 gap-2 md:grid-cols-3">
+  <div class="mx-auto mt-12 mb-4 grid w-3/4 grid-cols-1 gap-2 md:grid-cols-3">
     {#each data.johns as john}
       <JohnBox name={john.name} item={john.item} />
     {/each}

@@ -38,9 +38,13 @@
         />
       </p>
       <Dialog.Footer class={$errors.name || $errors.item ? 'mt-3' : ''}>
-        <div class="mr-auto flex flex-col">
-          {#if $errors.name}<span class="text-red-500">Name: {$errors.name}</span>{/if}
-          {#if $errors.item}<span class="text-red-500">Invention: {$errors.item}</span>{/if}
+        <div class="mr-auto flex w-full flex-col">
+          {#if $errors.name}<span class="w-full text-center text-red-500 md:w-auto md:text-left"
+              >Name: {$errors.name}</span
+            >{/if}
+          {#if $errors.item}<span class="w-full text-center text-red-500 md:w-auto md:text-left"
+              >Invention: {$errors.item}</span
+            >{/if}
         </div>
         <button type="submit" class="text-text font-primary bg-primary h-fit cursor-pointer rounded-md px-2 py-1">
           Submit
