@@ -2,6 +2,7 @@
   import { dark } from '@clerk/themes';
   import { SignedIn, SignedOut, SignInButton, UserButton } from 'svelte-clerk';
   import * as Dialog from '$lib/components/ui/dialog/index.js';
+  import { enhance } from '$app/forms';
 </script>
 
 <svelte:head>
@@ -35,8 +36,8 @@
         <Dialog.Trigger class="text-text font-primary bg-primary h-fit cursor-pointer rounded-md px-2"
           >Add new John</Dialog.Trigger
         >
-        <form>
-          <Dialog.Content>
+        <Dialog.Content>
+          <form method="POST" use:enhance>
             <Dialog.Header>
               <Dialog.Title>Add new John</Dialog.Title>
             </Dialog.Header>
@@ -51,8 +52,8 @@
                 Submit
               </button>
             </Dialog.Footer>
-          </Dialog.Content>
-        </form>
+          </form>
+        </Dialog.Content>
       </Dialog.Root>
     </div>
   </SignedIn>
