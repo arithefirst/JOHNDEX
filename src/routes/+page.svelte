@@ -24,10 +24,12 @@
 
 <main class="font-primary text-text min-h-screen bg-[#081216]">
   <div class="mx-auto w-fit">
-    <h1 class="the-freaky-ibm-font pt-20 text-center text-4xl md:text-7xl">JOHNDEX</h1>
-    <hr class="w-full border-1 border-[#AFB8BB]" />
+    <h1 class="the-freaky-ibm-font pt-20 text-center text-4xl md:text-7xl">
+      JO<span class="flicker-slow">H</span>N<span class="flicker-fast">D</span>EX
+    </h1>
+    <hr class="title-hr border-text w-full border-t-2" />
   </div>
-  <div class="mx-auto mt-12 mb-4 grid w-3/4 grid-cols-1 gap-2 md:grid-cols-3">
+  <div class="mx-auto my-4 grid w-5/6 grid-cols-1 gap-2 md:mt-12 md:w-3/4 md:grid-cols-3">
     {#each data.johns as john, i}
       <JohnBox
         i={generateAnimGroup(i)}
