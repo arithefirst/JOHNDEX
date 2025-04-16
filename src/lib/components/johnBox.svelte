@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+  import * as Popover from '$lib/components/ui/popover/index.js';
   import { BadgeInfo } from 'lucide-svelte';
   import { onMount } from 'svelte';
   import { blur } from 'svelte/transition';
@@ -26,21 +26,19 @@
     <hr class="text-text border-text w-2/3 border" />
     <p class="text-center text-2xl">Creator of {item}</p>
 
-    <Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger class="absolute right-2 bottom-2 cursor-pointer"><BadgeInfo /></Tooltip.Trigger>
-        <Tooltip.Content>
-          <p>Created by <span class="font-bold">{uploader}</span></p>
-          <p>
-            At <span class="font-bold"
-              >{createdAt.toLocaleDateString('en', {
-                hour: '2-digit',
-                minute: '2-digit',
-              })}</span
-            >
-          </p>
-        </Tooltip.Content>
-      </Tooltip.Root>
-    </Tooltip.Provider>
+    <Popover.Root>
+      <Popover.Trigger class="absolute right-2 bottom-2 cursor-pointer"><BadgeInfo /></Popover.Trigger>
+      <Popover.Content class="bg-primary font-primary h-fit w-fit border-0 p-2 leading-tight font-extralight">
+        <p>Created by <span class="font-bold">{uploader}</span></p>
+        <p>
+          At <span class="font-bold"
+            >{createdAt.toLocaleDateString('en', {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}</span
+          >
+        </p>
+      </Popover.Content>
+    </Popover.Root>
   </div>
 {/if}
