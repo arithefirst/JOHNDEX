@@ -19,7 +19,7 @@
 
 {#if loaded}
   <div
-    class="inset-shadow-johnbox relative flex h-fit min-h-[100px] w-full flex-col items-center justify-center rounded-xl bg-[#142E38]"
+    class="inset-shadow-johnbox relative flex h-full min-h-[100px] w-full flex-col items-center justify-center rounded-xl bg-[#142E38] p-2"
     in:blur={{ delay: 150 * i }}
   >
     <h2 class="text-center text-4xl">John {name}</h2>
